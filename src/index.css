@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 45 60% 95%;
+    --card: 222 47% 9%;
+    --card-foreground: 45 60% 95%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 45 60% 95%;
+    --primary: 43 75% 55%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 222 35% 15%;
+    --secondary-foreground: 43 75% 85%;
+    --muted: 222 30% 18%;
+    --muted-foreground: 40 20% 65%;
+    --accent: 43 75% 55%;
+    --accent-foreground: 222 47% 6%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 43 45% 28%;
+    --input: 43 45% 28%;
+    --ring: 43 75% 55%;
+    --radius: 1.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#070b14] text-[#f8edd1];
+  }
+}
+
+/* ── Regal Twilight & 24K Pure Gold Luxury Palette ───────────────── */
+:root {
+  --twilight-base: #070b14;
+  --twilight-card: #0d1527;
+  --twilight-surface: #121c33;
+  --gold-pure: #dfb141;
+  --gold-glow: #ffd768;
+  --gold-light: #fce8a6;
+  --gold-dark: #8a6516;
+  --ruby-accent: #c41e3a;
+  --emerald-accent: #1b4d3e;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--twilight-base);
+  color: #f8edd1;
+  font-family: 'Jost', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Luxury Custom Dark Gold Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #070b14;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b2c0f;
+  border: 1px solid #dfb141;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dfb141;
+}
+
+.font-royal { font-family: 'Cinzel', serif; }
+.font-serif-display { font-family: 'Playfair Display', serif; }
+.font-script { font-family: 'Great Vibes', cursive; }
+
+/* Ultra-Luminous 24K Liquid Gold Typography Gradient */
+.gold-text-glow {
+  background: linear-gradient(
+    135deg,
+    #b88a28 0%,
+    #ffd768 25%,
+    #ffffff 50%,
+    #ffd768 75%,
+    #b88a28 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 30px rgba(223, 177, 65, 0.4);
+  animation: goldFoilShimmer 6s linear infinite;
+}
+
+@keyframes goldFoilShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle Gold Text for Clean High-Contrast */
+.gold-accent-text {
+  color: #dfb141;
+  text-shadow: 0 0 12px rgba(223, 177, 65, 0.35);
+}
+
+/* Smooth Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating Sky Lantern */
+@keyframes lanternFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(var(--drift-x, 20px), -45vh, 0) scale(0.9);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(calc(var(--drift-x, 20px) * 2), -105vh, 0) scale(0.7);
+    opacity: 0;
+  }
+}
+.animate-lantern {
+  animation: lanternFloat linear forwards;
+}
+
+/* Pulsing Gold Celestial Rings */
+@keyframes ringRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: ringRotate 25s linear infinite;
+}
+.animate-spin-reverse-slow {
+  animation: ringRotate 35s linear infinite reverse;
+}
+
+/* Royal Monogram Aura */
+@keyframes royalTwilightGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(223, 177, 65, 0.3), inset 0 0 20px rgba(223, 177, 65, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 50px 10px rgba(223, 177, 65, 0.55), inset 0 0 35px rgba(223, 177, 65, 0.4);
+  }
+}
+.twilight-glow {
+  animation: royalTwilightGlow 4s ease-in-out infinite;
+}
+
+/* Glassmorphism Luxury Twilight Card */
+.glass-twilight {
+  background: rgba(13, 21, 39, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(223, 177, 65, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-twilight-card {
+  background: linear-gradient(135deg, rgba(18, 28, 51, 0.85) 0%, rgba(9, 14, 26, 0.95) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(223, 177, 65, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Equalizer Bars for Audio Player */
+@keyframes equalizer {
+  0%, 100% { height: 4px; }
+  50% { height: 16px; }
+}
+
+/* Royal Corner Accents */
+.royal-corners {
+  position: relative;
+}
+.royal-corners::before,
+.royal-corners::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #dfb141;
+  pointer-events: none;
+}
+.royal-corners::before {
+  top: 8px;
+  left: 8px;
+  border-right: none;
+  border-bottom: none;
+}
+.royal-corners::after {
+  bottom: 8px;
+  right: 8px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Ornamental Royal Dividers */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  color: #dfb141;
+}
+.ornament::before,
+.ornament::after {
+  content: '';
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, rgba(223, 177, 65, 0.8));
+}
+.ornament::after {
+  background: linear-gradient(90deg, rgba(223, 177, 65, 0.8), transparent);
+}
