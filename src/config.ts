@@ -4,6 +4,12 @@ export const WEDDING = {
   brideFullName: 'Ankita',
   groomFullName: 'Amrit',
   hashtag: '#AnkitaWedsAmrit',
+  productionUrl: 'https://amrit-weds-ankita.invitingyou.top',
+  alternateUrl: 'https://ankita-weds-amrit.invitingyou.top',
+  ogTitle: 'Ankita & Amrit — “These kids are getting married”',
+  ogDescription:
+    '“Talking over tea one fine day, we began a beautiful journey together.” Cordially inviting you to celebrate the wedding of Ankita & Amrit on December 8 & 9, 2026 at Sahyadri Mangal Karyalay, Maharashtra. #AnkitaWedsAmrit',
+  ogImage: 'https://amrit-weds-ankita.invitingyou.top/og-image.jpg',
   beginningPhrase: '“These kids are getting married”',
   phoneRsvp: '+919876543210',
   date: new Date('2026-12-09T19:00:00+05:30'),
