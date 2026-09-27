@@ -48,8 +48,12 @@ export default function Rsvp() {
     }
   }
 
-  const getWhatsAppMessage = () => {
+  const getWhatsAppMessage = (phone?: string) => {
     const text = `Namaste! RSVP for ${WEDDING.bride} & ${WEDDING.groom}'s Wedding:\nName: ${name || 'Guest'}\nStatus: ${attendance === 'attending' ? 'Joyfully Attending' : 'Regretfully Declining'}\nNumber of Guests: ${guestsCount}\nEvents: ${selectedEvents.join(', ')}\nWishes: ${wishes || 'Heartiest congratulations!'}`
+    if (phone) {
+      const clean = phone.replace(/[^0-9]/g, '')
+      return `https://api.whatsapp.com/send?phone=${clean}&text=${encodeURIComponent(text)}`
+    }
     return `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`
   }
 
@@ -101,13 +105,13 @@ export default function Rsvp() {
                   </p>
                   <p className="font-serif-display mt-3 text-sm text-[#dcd1ba] italic max-w-md mx-auto">
                     {attendance === 'attending'
-                      ? "We are delighted to welcome you to celebrate with us at Sahyadri Mangal Karyalay!"
+                      ? "We are delighted to welcome you to celebrate with us at Sahyadri Mangal Karyalay & Swarg Sahyadri Farms!"
                       : "Thank you for sending your heartfelt blessings to Ankita & Amrit."}
                   </p>
 
                   <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                     <a
-                      href={getWhatsAppMessage()}
+                      href={getWhatsAppMessage(WEDDING.phoneRsvp)}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-royal text-xs font-bold uppercase tracking-wider text-white shadow-lg transition-transform hover:scale-105"
@@ -121,6 +125,51 @@ export default function Rsvp() {
                     >
                       <span>Edit Response</span>
                     </button>
+                  </div>
+
+                  {/* Direct Contact Numbers for Submitted State */}
+                  <div className="mt-10 pt-6 border-t border-[#dfb141]/25 text-left">
+                    <p className="font-royal text-center text-xs font-bold uppercase tracking-[0.25em] text-[#ffd768] mb-4">
+                      Direct Wedding Contact Numbers
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-xl mx-auto">
+                      {WEDDING.rsvpNumbers.map((contact, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center justify-between rounded-2xl border border-[#dfb141]/35 bg-[#070b14]/80 p-3.5 shadow-inner"
+                        >
+                          <div>
+                            <span className="font-royal text-[10px] font-bold uppercase tracking-wider text-[#dfb141] bg-[#121c33] px-2 py-0.5 rounded-full border border-[#dfb141]/30">
+                              RSVP Contact {idx + 1}
+                            </span>
+                            <a
+                              href={`tel:${contact.tel}`}
+                              className="block font-mono text-sm font-bold text-[#f8edd1] tracking-wider mt-1.5 hover:text-[#ffd768] transition-colors"
+                            >
+                              {contact.display}
+                            </a>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <a
+                              href={`tel:${contact.tel}`}
+                              title={`Call ${contact.display}`}
+                              className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#dfb141]/40 bg-[#121c33] text-[#ffd768] transition-all hover:scale-110 hover:border-[#ffd768] hover:bg-[#dfb141] hover:text-[#070b14] active:scale-95 shadow-md"
+                            >
+                              <PhoneCall className="h-4 w-4" />
+                            </a>
+                            <a
+                              href={getWhatsAppMessage(contact.tel)}
+                              target="_blank"
+                              rel="noreferrer"
+                              title={`WhatsApp ${contact.display}`}
+                              className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#25D366]/40 bg-[#0c2217] text-[#25D366] transition-all hover:scale-110 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white active:scale-95 shadow-md"
+                            >
+                              <MessageCircle className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -263,23 +312,66 @@ export default function Rsvp() {
                       <span>Confirm My RSVP</span>
                     </button>
 
-                    <div className="flex flex-wrap items-center gap-3">
-                      <a
-                        href={getWhatsAppMessage()}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-[#25D366]/60 bg-[#070b14]/80 px-5 py-3.5 font-royal text-xs font-bold uppercase tracking-wider text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all shadow-md"
-                      >
-                        <MessageCircle className="h-4 w-4" />
-                        <span>RSVP via WhatsApp</span>
-                      </a>
-                      <a
-                        href={`tel:${WEDDING.phoneRsvp}`}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-[#dfb141]/50 bg-[#070b14]/80 px-5 py-3.5 font-royal text-xs font-bold uppercase tracking-wider text-[#ffd768] hover:bg-[#141f38] transition-all shadow-md"
-                      >
-                        <PhoneCall className="h-4 w-4 text-[#dfb141]" />
-                        <span>Call for RSVP</span>
-                      </a>
+                    <a
+                      href={getWhatsAppMessage(WEDDING.phoneRsvp)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-[#25D366]/60 bg-[#070b14]/80 px-6 py-3.5 font-royal text-xs font-bold uppercase tracking-wider text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all shadow-md"
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                      <span>Quick RSVP via WhatsApp</span>
+                    </a>
+                  </div>
+
+                  {/* Direct Contact Numbers Section */}
+                  <div className="mt-8 pt-6 border-t border-[#dfb141]/25">
+                    <div className="mb-3">
+                      <p className="font-royal text-xs font-bold uppercase tracking-[0.2em] text-[#ffd768]">
+                        Contact Us for RSVP &amp; Queries
+                      </p>
+                      <p className="font-serif-display text-xs text-[#dcd1ba] italic mt-0.5">
+                        Prefer to reach out directly? Call or WhatsApp us:
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      {WEDDING.rsvpNumbers.map((contact, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center justify-between rounded-2xl border border-[#dfb141]/35 bg-[#070b14]/80 p-3.5 transition-all hover:border-[#dfb141] hover:bg-[#070b14] shadow-inner"
+                        >
+                          <div>
+                            <span className="font-royal text-[10px] font-bold uppercase tracking-wider text-[#dfb141] bg-[#121c33] px-2 py-0.5 rounded-full border border-[#dfb141]/30">
+                              Contact {idx + 1}
+                            </span>
+                            <a
+                              href={`tel:${contact.tel}`}
+                              className="block font-mono text-sm font-bold text-[#f8edd1] tracking-wider mt-1.5 hover:text-[#ffd768] transition-colors"
+                            >
+                              {contact.display}
+                            </a>
+                          </div>
+
+                          <div className="flex items-center gap-2">
+                            <a
+                              href={`tel:${contact.tel}`}
+                              title={`Call ${contact.display}`}
+                              className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#dfb141]/40 bg-[#121c33] text-[#ffd768] transition-all hover:scale-110 hover:border-[#ffd768] hover:bg-[#dfb141] hover:text-[#070b14] active:scale-95 shadow-md"
+                            >
+                              <PhoneCall className="h-4 w-4" />
+                            </a>
+                            <a
+                              href={getWhatsAppMessage(contact.tel)}
+                              target="_blank"
+                              rel="noreferrer"
+                              title={`WhatsApp ${contact.display}`}
+                              className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#25D366]/40 bg-[#0c2217] text-[#25D366] transition-all hover:scale-110 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white active:scale-95 shadow-md"
+                            >
+                              <MessageCircle className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </form>

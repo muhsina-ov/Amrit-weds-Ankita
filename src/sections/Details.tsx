@@ -219,7 +219,7 @@ export default function Details() {
                 <div className="rounded-xl bg-[#070b14]/70 p-3.5 border border-[#dfb141]/20">
                   <p className="font-bold text-base text-[#ffd768]">{WEDDING.stayVenue}</p>
                   <p className="font-serif-display text-xs text-[#dcd1ba] mt-2 leading-relaxed">
-                    Warm stay arrangements and check-in hosted for wedding guests and family. Also the venue for Mehendi &amp; Haldi ceremonies!
+                    Warm stay arrangements and check-in hosted for wedding guests and family. Also the venue for Mehendi, Sangeet &amp; Haldi ceremonies!
                   </p>
                 </div>
               </div>
