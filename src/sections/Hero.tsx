@@ -98,9 +98,9 @@ export default function Hero({ onExplore, onPlaySong, isPlayingSong }: HeroProps
           <div className="absolute inset-2 rounded-full border border-[#dfb141]/25 animate-spin-reverse-slow" />
           {/* Center Monogram Core */}
           <div className="twilight-glow flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#dfb141] bg-gradient-to-br from-[#162340] via-[#0d1527] to-[#070b14] shadow-2xl backdrop-blur-md">
-            <span className="font-script text-4xl font-bold text-[#ffd768] -mr-1">A</span>
+            <span className="font-royal text-3xl font-bold tracking-tight text-[#ffd768]">A</span>
             <span className="font-royal text-xs font-light text-[#dfb141] mx-1">&amp;</span>
-            <span className="font-script text-4xl font-bold text-[#ffd768] -ml-1">A</span>
+            <span className="font-royal text-3xl font-bold tracking-tight text-[#ffd768]">A</span>
           </div>
         </div>
 

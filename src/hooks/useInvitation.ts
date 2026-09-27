@@ -15,7 +15,7 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
           }
         })
       },
-      { threshold: 0.18, rootMargin: '0px 0px -6% 0px' }
+      { threshold: 0.02, rootMargin: '100px 0px 50px 0px' }
     )
     obs.observe(el)
     return () => obs.disconnect()

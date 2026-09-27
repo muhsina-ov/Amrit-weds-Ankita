@@ -19,7 +19,7 @@ export default function Navbar() {
   const navLinks = [
     { label: 'Our Story', href: '#story' },
     { label: 'Functions', href: '#itinerary' },
-    { label: 'Moments', href: '#gallery' },
+    { label: 'RSVP', href: '#rsvp' },
     { label: 'Venue & Travel', href: '#details' },
   ]
 
@@ -48,7 +48,7 @@ export default function Navbar() {
             className="flex items-center gap-3 transition-transform hover:scale-105"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#dfb141]/70 bg-gradient-to-br from-[#121c33] to-[#070b14] shadow-[0_0_15px_rgba(223,177,65,0.3)]">
-              <span className="font-script text-xl text-[#ffd768]">A&amp;A</span>
+              <span className="font-royal text-sm font-bold tracking-widest text-[#ffd768]">A&amp;A</span>
             </div>
             <div>
               <span className="font-royal text-xs font-bold uppercase tracking-[0.25em] text-[#f8edd1] block">

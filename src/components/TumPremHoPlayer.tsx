@@ -70,7 +70,7 @@ export default function TumPremHoPlayer({
             <iframe
               width="100%"
               height="160"
-              src={`https://www.youtube.com/embed/${WEDDING.music.youtubeId}?autoplay=1&enablejsapi=1`}
+              src={`https://www.youtube.com/embed/${WEDDING.music.youtubeId}?autoplay=1&start=13&enablejsapi=1`}
               title="Tum Prem Ho - Official Song"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -93,7 +93,7 @@ export default function TumPremHoPlayer({
             ) : (
               <>
                 <Play className="h-3.5 w-3.5 fill-[#070b14]" />
-                <span>Play Instrumental</span>
+                <span>Play Song</span>
               </>
             )}
           </button>

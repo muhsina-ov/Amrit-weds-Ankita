@@ -66,7 +66,7 @@ export default function Countdown({ onTriggerLantern }: { onTriggerLantern?: () 
     <section
       id="countdown"
       ref={ref}
-      className="reveal relative overflow-hidden bg-gradient-to-b from-[#070b14] via-[#0d1629] to-[#070b14] px-6 py-32 text-center"
+      className="reveal relative overflow-hidden bg-gradient-to-b from-[#070b14] via-[#0d1629] to-[#070b14] px-6 pt-20 pb-16 sm:pt-28 sm:pb-20 text-center"
     >
       {/* Soft Ambient Radiance */}
       <div className="pointer-events-none absolute -left-28 -top-28 h-80 w-80 rounded-full bg-[#dfb141]/10 blur-3xl" />

@@ -41,11 +41,11 @@ export default function Footer() {
 
         {/* Couple Portrait Frame with Arch Styling */}
         <div className="glass-twilight mt-12 w-full max-w-sm overflow-hidden rounded-t-[11rem] rounded-b-3xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-[#dfb141]/50 transition-transform duration-500 hover:scale-[1.02]">
-          <div className="overflow-hidden rounded-t-[10.5rem] rounded-b-2xl border border-[#dfb141]/40">
+          <div className="overflow-hidden rounded-t-[10.5rem] rounded-b-2xl border border-[#dfb141]/40 bg-[#070b14]">
             <img
-              src="/assets/event_sangeet.jpg"
-              alt="Ankita and Amrit Celebrating"
-              className="w-full h-80 object-cover object-top brightness-95 transition-transform duration-700 hover:scale-105"
+              src="/assets/love_gratitude.png"
+              alt="Ankita and Amrit - With Love & Gratitude"
+              className="w-full h-auto max-h-[28rem] object-cover object-top brightness-100 transition-transform duration-700 hover:scale-105"
             />
           </div>
           <div className="pt-6 pb-3">

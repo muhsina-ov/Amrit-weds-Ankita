@@ -97,7 +97,7 @@ export default function RoyalEnvelope({ isOpen, onOpen }: RoyalEnvelopeProps) {
                 <span className="font-royal text-[9px] font-bold uppercase tracking-widest text-[#ffd768]">
                   WEDDING
                 </span>
-                <span className="font-script text-2xl text-white drop-shadow">
+                <span className="font-royal text-xl font-bold tracking-widest text-white drop-shadow">
                   A &amp; A
                 </span>
                 <span className="font-royal text-[8px] font-medium tracking-wider text-[#ffe599]">

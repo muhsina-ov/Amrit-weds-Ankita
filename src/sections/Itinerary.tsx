@@ -61,7 +61,7 @@ export default function Itinerary() {
   }
 
   return (
-    <section id="itinerary" ref={ref} className="reveal relative bg-[#070b14] px-6 py-32">
+    <section id="itinerary" ref={ref} className="reveal relative bg-[#070b14] px-6 pt-12 pb-24 sm:pt-20 sm:pb-32">
       <div className="mx-auto max-w-5xl text-center">
         {/* Section Tag */}
         <div className="inline-flex items-center gap-2.5 rounded-full border border-[#dfb141]/40 bg-[#0d1527]/90 px-5 py-2 shadow-lg backdrop-blur-xl">
