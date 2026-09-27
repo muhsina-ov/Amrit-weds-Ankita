@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { WEDDING } from '@/config'
 import Navbar from '@/components/Navbar'
 import SparkleTrail from '@/components/SparkleTrail'
 import PicholaCanvas from '@/components/PicholaCanvas'
@@ -22,9 +23,9 @@ export default function Home() {
   const [isSongPlayerOpen, setIsSongPlayerOpen] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
-  // Dedicated "Tum Prem Ho" wedding song starting right before relevant lyrics
+  // Dedicated background wedding song (Gehra Hua) starting when invitation opens
   useEffect(() => {
-    const bgAudio = new Audio('/assets/tum_prem_ho.mp3')
+    const bgAudio = new Audio(WEDDING.music.audioSrc || '/assets/gehra_hua.mp3')
     bgAudio.loop = true
     bgAudio.volume = 0.65
     setAudio(bgAudio)

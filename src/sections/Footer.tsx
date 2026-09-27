@@ -34,6 +34,14 @@ export default function Footer() {
       className="reveal relative flex flex-col items-center justify-end overflow-hidden bg-gradient-to-b from-[#070b14] via-[#09101f] to-[#04070d] px-6 pt-28 pb-24 text-center"
     >
       <div className="relative z-10 mx-auto max-w-2xl flex flex-col items-center">
+        {/* Official Couple Wedding Logo Emblem */}
+        <div className="mb-5 relative flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full overflow-hidden border-2 border-[#dfb141] bg-[#fceddf] shadow-[0_0_25px_rgba(223,177,65,0.4)] transition-transform duration-500 hover:scale-110">
+          <img
+            src={WEDDING.logo}
+            alt="Ankita & Amrit Official Wedding Logo"
+            className="h-full w-full object-cover"
+          />
+        </div>
         <p className="gold-text-glow font-script text-6xl sm:text-7xl">With Love &amp; Gratitude</p>
         <p className="font-serif-display mt-3 italic text-sm text-[#dcd1ba] max-w-lg font-normal">
           "We cannot wait to share the joy, laughter, and lifelong memories of our wedding celebrations with all of you!"

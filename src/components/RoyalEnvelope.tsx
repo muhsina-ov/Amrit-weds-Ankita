@@ -92,17 +92,13 @@ export default function RoyalEnvelope({ isOpen, onOpen }: RoyalEnvelopeProps) {
               {/* Pulsing Aura */}
               <span className="absolute -inset-2 rounded-full border border-[#ffd768]/60 animate-ping opacity-35" />
 
-              {/* Inner Seal Texture */}
-              <div className="flex h-20 w-20 flex-col items-center justify-center rounded-full border border-[#ffe599]/60 bg-gradient-to-tr from-[#78510b] to-[#c79124] shadow-inner">
-                <span className="font-royal text-[9px] font-bold uppercase tracking-widest text-[#ffd768]">
-                  WEDDING
-                </span>
-                <span className="font-royal text-xl font-bold tracking-widest text-white drop-shadow">
-                  A &amp; A
-                </span>
-                <span className="font-royal text-[8px] font-medium tracking-wider text-[#ffe599]">
-                  DEC 2026
-                </span>
+              {/* Inner Seal with Wedding Logo */}
+              <div className="relative flex h-20 w-20 sm:h-22 sm:w-22 items-center justify-center rounded-full overflow-hidden border-2 border-[#ffe599] shadow-inner bg-[#fceddf]">
+                <img
+                  src={WEDDING.logo}
+                  alt="Ankita & Amrit Wedding Logo"
+                  className="h-full w-full object-cover"
+                />
               </div>
             </button>
             <span className="font-royal mt-4 text-[11px] font-bold uppercase tracking-[0.35em] text-[#ffd768] animate-pulse">

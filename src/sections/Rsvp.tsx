@@ -3,7 +3,7 @@ import { WEDDING } from '@/config'
 import { useReveal } from '@/hooks/useInvitation'
 import { useSoundEffects } from '@/hooks/useSoundEffects'
 import CardTilt from '@/components/CardTilt'
-import { Sparkles, Heart, CheckCircle2, Send, PhoneCall, MessageCircle, UserCheck } from 'lucide-react'
+import { Sparkles, Heart, CheckCircle2, PhoneCall, MessageCircle, UserCheck } from 'lucide-react'
 import confetti from 'canvas-confetti'
 
 export default function Rsvp() {
@@ -302,21 +302,13 @@ export default function Rsvp() {
                     />
                   </div>
 
-                  {/* Submit Button */}
-                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <button
-                      type="submit"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#dfb141] via-[#ffd768] to-[#dfb141] px-9 py-4 font-royal text-xs font-bold uppercase tracking-[0.25em] text-[#070b14] shadow-[0_0_25px_rgba(223,177,65,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_35px_rgba(223,177,65,0.6)] active:scale-95"
-                    >
-                      <Send className="h-4 w-4" />
-                      <span>Confirm My RSVP</span>
-                    </button>
-
+                  {/* RSVP Action */}
+                  <div className="pt-2 flex justify-center">
                     <a
                       href={getWhatsAppMessage(WEDDING.phoneRsvp)}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-[#25D366]/60 bg-[#070b14]/80 px-6 py-3.5 font-royal text-xs font-bold uppercase tracking-wider text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all shadow-md"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full border border-[#25D366]/70 bg-[#0c2217]/90 px-8 py-4 font-royal text-xs font-bold uppercase tracking-wider text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all hover:scale-105 shadow-[0_0_25px_rgba(37,211,102,0.3)] active:scale-95"
                     >
                       <MessageCircle className="h-4 w-4" />
                       <span>Quick RSVP via WhatsApp</span>

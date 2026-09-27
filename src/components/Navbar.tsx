@@ -47,8 +47,12 @@ export default function Navbar() {
             href="#"
             className="flex items-center gap-3 transition-transform hover:scale-105"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#dfb141]/70 bg-gradient-to-br from-[#121c33] to-[#070b14] shadow-[0_0_15px_rgba(223,177,65,0.3)]">
-              <span className="font-royal text-sm font-bold tracking-widest text-[#ffd768]">A&amp;A</span>
+            <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full overflow-hidden border-2 border-[#dfb141] bg-[#fceddf] shadow-[0_0_15px_rgba(223,177,65,0.4)]">
+              <img
+                src={WEDDING.logo}
+                alt="Ankita & Amrit Official Wedding Logo"
+                className="h-full w-full object-cover"
+              />
             </div>
             <div>
               <span className="font-royal text-xs font-bold uppercase tracking-[0.25em] text-[#f8edd1] block">

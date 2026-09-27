@@ -90,17 +90,21 @@ export default function Hero({ onExplore, onPlaySong, isPlayingSong }: HeroProps
           <span className="text-lg text-[#ffd768]">✨</span>
         </div>
 
-        {/* Imperial Monogram with Rotating Celestial Rings */}
-        <div className="relative my-6 flex h-32 w-32 items-center justify-center">
+        {/* Imperial Monogram with Rotating Celestial Rings & Official Couple Logo */}
+        <div className="relative my-7 flex h-36 w-36 sm:h-44 sm:w-44 items-center justify-center">
           {/* Outer Rotating Celestial Ring */}
-          <div className="absolute inset-0 rounded-full border border-dashed border-[#dfb141]/40 animate-spin-slow" />
+          <div className="absolute inset-0 rounded-full border border-dashed border-[#dfb141]/50 animate-spin-slow" />
           {/* Reverse Inner Ring */}
-          <div className="absolute inset-2 rounded-full border border-[#dfb141]/25 animate-spin-reverse-slow" />
-          {/* Center Monogram Core */}
-          <div className="twilight-glow flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#dfb141] bg-gradient-to-br from-[#162340] via-[#0d1527] to-[#070b14] shadow-2xl backdrop-blur-md">
-            <span className="font-royal text-3xl font-bold tracking-tight text-[#ffd768]">A</span>
-            <span className="font-royal text-xs font-light text-[#dfb141] mx-1">&amp;</span>
-            <span className="font-royal text-3xl font-bold tracking-tight text-[#ffd768]">A</span>
+          <div className="absolute inset-2 sm:inset-3 rounded-full border border-[#dfb141]/35 animate-spin-reverse-slow" />
+          {/* Pulsing Aura */}
+          <div className="absolute inset-4 rounded-full bg-[#dfb141]/20 blur-xl animate-pulse" />
+          {/* Center Monogram / Wedding Logo Badge */}
+          <div className="twilight-glow relative flex h-28 w-28 sm:h-36 sm:w-36 items-center justify-center rounded-full overflow-hidden border-2 border-[#dfb141] bg-[#fceddf] shadow-[0_0_35px_rgba(223,177,65,0.45)] transition-transform duration-500 hover:scale-105">
+            <img
+              src={WEDDING.logo}
+              alt="Ankita & Amrit Official Wedding Logo"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
 

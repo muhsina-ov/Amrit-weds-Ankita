@@ -26,11 +26,14 @@ export const WEDDING = {
   mapQuery: 'Sahyadri Mangal Karyalay',
   mapsUrl: 'https://maps.app.goo.gl/V5mNtMtpdc1T8TFp6?g_st=ic',
   stayVenue: 'Swarg Sahyadri Farms',
+  logo: '/assets/wedding_logo.jpg',
   music: {
-    title: 'Tum Prem Ho',
-    artist: 'Radhe Krishna • Mohit Lalwani',
-    youtubeUrl: 'https://music.youtube.com/watch?v=mCsoAPRI52U&si=HPXbwNaH2UmjEcfA',
-    youtubeId: 'mCsoAPRI52U',
+    title: 'Gehra Hua',
+    version: "Yalina's Intro Version",
+    artist: 'Shashwat Sachdeva • Dhurandhar OST',
+    audioSrc: '/assets/gehra_hua.mp3',
+    youtubeUrl: 'https://youtu.be/-tYvlst2scE?si=83gp1KYA0cn2zKs5',
+    youtubeId: '-tYvlst2scE',
   },
   weather: {
     temp: '22°C / 72°F',

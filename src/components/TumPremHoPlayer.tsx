@@ -40,14 +40,20 @@ export default function TumPremHoPlayer({
 
         {/* Content */}
         <div className="mt-4 flex items-center gap-4">
-          {/* Animated Gold Vinyl Record */}
+          {/* Animated Gold Vinyl Record with Wedding Logo */}
           <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-[#dfb141] bg-[#070b14] shadow-[0_0_15px_rgba(223,177,65,0.3)]">
             <Disc3
               className={`h-12 w-12 text-[#dfb141] ${
                 isPlaying ? 'animate-[spin_4s_linear_infinite]' : ''
               }`}
             />
-            <span className="absolute h-4 w-4 rounded-full border border-[#dfb141] bg-[#121c33]" />
+            <div className="absolute h-6 w-6 rounded-full overflow-hidden border border-[#dfb141] bg-[#fceddf] shadow-sm">
+              <img
+                src={WEDDING.logo}
+                alt="Wedding Logo"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
 
           {/* Song Info */}
@@ -56,7 +62,7 @@ export default function TumPremHoPlayer({
               {WEDDING.music.title}
             </p>
             <p className="font-serif-display text-xs text-[#dcd1ba] mt-0.5 truncate">
-              {WEDDING.music.artist}
+              {WEDDING.music.version || WEDDING.music.artist}
             </p>
             <p className="font-royal text-[9px] uppercase tracking-wider text-[#dfb141]/80 mt-1">
               Couple's Handpicked Song
@@ -70,8 +76,8 @@ export default function TumPremHoPlayer({
             <iframe
               width="100%"
               height="160"
-              src={`https://www.youtube.com/embed/${WEDDING.music.youtubeId}?autoplay=1&start=13&enablejsapi=1`}
-              title="Tum Prem Ho - Official Song"
+              src={`https://www.youtube.com/embed/${WEDDING.music.youtubeId}?autoplay=1&enablejsapi=1`}
+              title={`${WEDDING.music.title} - Background Audio`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="w-full"
@@ -111,9 +117,9 @@ export default function TumPremHoPlayer({
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-1 text-[10px] font-royal font-bold uppercase tracking-wider text-[#dfb141] hover:text-white transition-colors"
-            title="Open on YouTube Music"
+            title="Open on YouTube"
           >
-            <span>YT Music</span>
+            <span>YouTube</span>
             <ExternalLink className="h-3 w-3" />
           </a>
         </div>

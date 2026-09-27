@@ -1,5 +1,6 @@
 import { Volume2, VolumeX, Flame, Music } from 'lucide-react'
 import { useSoundEffects } from '@/hooks/useSoundEffects'
+import { WEDDING } from '@/config'
 
 interface DynamicIslandDockProps {
   isPlaying: boolean
@@ -55,14 +56,14 @@ export default function DynamicIslandDock({
           )}
         </button>
 
-        {/* Tum Prem Ho Song Player Opener */}
+        {/* Wedding Song Player Opener */}
         <button
           onClick={onOpenSongPlayer}
           className="flex items-center gap-1.5 rounded-full border border-[#dfb141]/40 bg-[#162340] px-3 py-1.5 text-[10px] font-royal font-bold uppercase tracking-wider text-[#ffd768] hover:bg-[#1f3056] hover:text-white transition-all shadow-sm"
-          title="Open Tum Prem Ho wedding song player"
+          title={`Open ${WEDDING.music.title} wedding song player`}
         >
           <Music className="h-3 w-3 text-[#dfb141]" />
-          <span>Tum Prem Ho</span>
+          <span>{WEDDING.music.title}</span>
         </button>
 
         {/* Separator */}
