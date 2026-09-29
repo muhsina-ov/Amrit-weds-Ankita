@@ -26,7 +26,7 @@ export const WEDDING = {
   mapQuery: 'Sahyadri Mangal Karyalay',
   mapsUrl: 'https://maps.app.goo.gl/V5mNtMtpdc1T8TFp6?g_st=ic',
   stayVenue: 'Swarg Sahyadri Farms',
-  logo: '/assets/wedding_logo.jpg',
+  logo: '/assets/wedding_logo.png',
   music: {
     title: 'Gehra Hua',
     version: "Yalina's Intro Version",

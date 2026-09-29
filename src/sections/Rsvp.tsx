@@ -308,9 +308,23 @@ export default function Rsvp() {
                       href={getWhatsAppMessage(WEDDING.phoneRsvp)}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full border border-[#25D366]/70 bg-[#0c2217]/90 px-8 py-4 font-royal text-xs font-bold uppercase tracking-wider text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all hover:scale-105 shadow-[0_0_25px_rgba(37,211,102,0.3)] active:scale-95"
+                      onClick={() => {
+                        playBlessingSitar()
+                        playChime()
+                        try {
+                          confetti({
+                            particleCount: 60,
+                            spread: 90,
+                            origin: { y: 0.7 },
+                            colors: ['#25D366', '#dfb141', '#ffd768', '#ffffff'],
+                          })
+                        } catch {
+                          // Ignore
+                        }
+                      }}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full border border-[#25D366]/80 bg-gradient-to-r from-[#0c2e1c] via-[#154c30] to-[#0c2e1c] px-8 py-4 font-royal text-xs font-bold uppercase tracking-wider text-[#4ade80] hover:text-white hover:border-[#4ade80] transition-all hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.35)] active:scale-95 cursor-pointer"
                     >
-                      <MessageCircle className="h-4 w-4" />
+                      <MessageCircle className="h-5 w-5 text-[#25D366]" />
                       <span>Quick RSVP via WhatsApp</span>
                     </a>
                   </div>
