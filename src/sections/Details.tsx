@@ -1,7 +1,7 @@
 import { WEDDING } from '@/config'
 import { useReveal } from '@/hooks/useInvitation'
 import CardTilt from '@/components/CardTilt'
-import { MapPin, Navigation, Calendar as CalendarIcon, ExternalLink, Sparkles, Plane, Train, Home } from 'lucide-react'
+import { MapPin, Navigation, Calendar as CalendarIcon, ExternalLink, Sparkles, Plane, Train } from 'lucide-react'
 
 function icsEscape(s: string) {
   return s.replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;')
@@ -157,13 +157,13 @@ export default function Details() {
           </div>
         </div>
 
-        {/* Travel & Stay Details Section */}
+        {/* Travel Details Section */}
         <div className="mt-14 text-left">
           <h3 className="font-royal text-xl sm:text-2xl font-bold uppercase tracking-[0.25em] text-[#ffd768] text-center mb-8">
-            ✈️ Travel &amp; Accommodation
+            ✈️ Travel Information
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {/* Airport Travel Card */}
             <div className="glass-twilight rounded-2xl p-6 shadow-md border border-[#dfb141]/30 flex flex-col justify-between">
               <div>
@@ -201,25 +201,6 @@ export default function Details() {
                   <p className="font-bold text-base text-[#ffd768]">Kalyan (Kalyan Junction)</p>
                   <p className="font-serif-display text-xs text-[#dcd1ba] mt-2 leading-relaxed">
                     Well connected by central railway lines, local suburban trains, and express long-distance trains from all parts of the country.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Stay & Check-in Card */}
-            <div className="glass-twilight rounded-2xl p-6 shadow-md border border-[#dfb141]/30 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2.5 text-[#ffd768] font-royal text-xs font-bold uppercase tracking-wider">
-                  <Home className="h-5 w-5 text-[#dfb141]" />
-                  <span>Stay &amp; Check-In</span>
-                </div>
-                <p className="font-royal text-[11px] uppercase tracking-wider text-[#dcd1ba] mt-2 mb-3">
-                  Accommodations:
-                </p>
-                <div className="rounded-xl bg-[#070b14]/70 p-3.5 border border-[#dfb141]/20">
-                  <p className="font-bold text-base text-[#ffd768]">{WEDDING.stayVenue}</p>
-                  <p className="font-serif-display text-xs text-[#dcd1ba] mt-2 leading-relaxed">
-                    Warm stay arrangements and check-in hosted for wedding guests and family. Also the venue for Mehendi, Sangeet &amp; Haldi ceremonies!
                   </p>
                 </div>
               </div>
