@@ -23,9 +23,9 @@ export default function Home() {
   const [isSongPlayerOpen, setIsSongPlayerOpen] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
-  // Dedicated background wedding song (Gehra Hua) starting when invitation opens
+  // Dedicated background wedding song (Tum Prem Ho) starting when invitation opens
   useEffect(() => {
-    const bgAudio = new Audio(WEDDING.music.audioSrc || '/assets/gehra_hua.mp3')
+    const bgAudio = new Audio(WEDDING.music.audioSrc || '/assets/tum_prem_ho.mp3')
     bgAudio.loop = true
     bgAudio.volume = 0.65
     setAudio(bgAudio)

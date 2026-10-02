@@ -3,7 +3,7 @@ import { WEDDING } from '@/config'
 import { useReveal } from '@/hooks/useInvitation'
 import { useSoundEffects } from '@/hooks/useSoundEffects'
 import CardTilt from '@/components/CardTilt'
-import { Sparkles, Heart, CheckCircle2, PhoneCall, MessageCircle, UserCheck } from 'lucide-react'
+import { Sparkles, Heart, CheckCircle2, MessageCircle, UserCheck } from 'lucide-react'
 import confetti from 'canvas-confetti'
 
 export default function Rsvp() {
@@ -130,43 +130,37 @@ export default function Rsvp() {
                   {/* Direct Contact Numbers for Submitted State */}
                   <div className="mt-10 pt-6 border-t border-[#dfb141]/25 text-left">
                     <p className="font-royal text-center text-xs font-bold uppercase tracking-[0.25em] text-[#ffd768] mb-4">
-                      Direct Wedding Contact Numbers
+                      Direct WhatsApp RSVP Contact
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-xl mx-auto">
+                    <div className="max-w-md mx-auto">
                       {WEDDING.rsvpNumbers.map((contact, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center justify-between rounded-2xl border border-[#dfb141]/35 bg-[#070b14]/80 p-3.5 shadow-inner"
+                          className="flex items-center justify-between rounded-2xl border border-[#25D366]/40 bg-[#070b14]/80 p-3.5 sm:p-4 shadow-inner"
                         >
                           <div>
-                            <span className="font-royal text-[10px] font-bold uppercase tracking-wider text-[#dfb141] bg-[#121c33] px-2 py-0.5 rounded-full border border-[#dfb141]/30">
-                              RSVP Contact {idx + 1}
+                            <span className="font-royal text-[10px] font-bold uppercase tracking-wider text-[#4ade80] bg-[#0c2217] px-2.5 py-0.5 rounded-full border border-[#25D366]/30">
+                              {contact.label}
                             </span>
-                            <a
-                              href={`tel:${contact.tel}`}
-                              className="block font-mono text-sm font-bold text-[#f8edd1] tracking-wider mt-1.5 hover:text-[#ffd768] transition-colors"
-                            >
-                              {contact.display}
-                            </a>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <a
-                              href={`tel:${contact.tel}`}
-                              title={`Call ${contact.display}`}
-                              className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#dfb141]/40 bg-[#121c33] text-[#ffd768] transition-all hover:scale-110 hover:border-[#ffd768] hover:bg-[#dfb141] hover:text-[#070b14] active:scale-95 shadow-md"
-                            >
-                              <PhoneCall className="h-4 w-4" />
-                            </a>
                             <a
                               href={getWhatsAppMessage(contact.tel)}
                               target="_blank"
                               rel="noreferrer"
-                              title={`WhatsApp ${contact.display}`}
-                              className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#25D366]/40 bg-[#0c2217] text-[#25D366] transition-all hover:scale-110 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white active:scale-95 shadow-md"
+                              className="block font-mono text-sm font-bold text-[#f8edd1] tracking-wider mt-1.5 hover:text-[#4ade80] transition-colors"
                             >
-                              <MessageCircle className="h-4 w-4" />
+                              {contact.display}
                             </a>
                           </div>
+                          <a
+                            href={getWhatsAppMessage(contact.tel)}
+                            target="_blank"
+                            rel="noreferrer"
+                            title={`WhatsApp ${contact.display}`}
+                            className="flex items-center gap-2 rounded-xl border border-[#25D366]/60 bg-[#0c2217] px-4 py-2.5 text-[#25D366] transition-all hover:scale-105 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white active:scale-95 shadow-md"
+                          >
+                            <MessageCircle className="h-4 w-4" />
+                            <span className="font-royal text-xs font-bold uppercase tracking-wider">WhatsApp</span>
+                          </a>
                         </div>
                       ))}
                     </div>
@@ -331,51 +325,45 @@ export default function Rsvp() {
 
                   {/* Direct Contact Numbers Section */}
                   <div className="mt-8 pt-6 border-t border-[#dfb141]/25">
-                    <div className="mb-3">
+                    <div className="mb-3 text-center sm:text-left">
                       <p className="font-royal text-xs font-bold uppercase tracking-[0.2em] text-[#ffd768]">
-                        Contact Us for RSVP &amp; Queries
+                        Contact Us for WhatsApp RSVP
                       </p>
                       <p className="font-serif-display text-xs text-[#dcd1ba] italic mt-0.5">
-                        Prefer to reach out directly? Call or WhatsApp us:
+                        Prefer to reach out directly? Message us on WhatsApp:
                       </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div className="max-w-md mx-auto">
                       {WEDDING.rsvpNumbers.map((contact, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center justify-between rounded-2xl border border-[#dfb141]/35 bg-[#070b14]/80 p-3.5 transition-all hover:border-[#dfb141] hover:bg-[#070b14] shadow-inner"
+                          className="flex items-center justify-between rounded-2xl border border-[#25D366]/40 bg-[#070b14]/80 p-3.5 sm:p-4 transition-all hover:border-[#25D366] shadow-inner"
                         >
                           <div>
-                            <span className="font-royal text-[10px] font-bold uppercase tracking-wider text-[#dfb141] bg-[#121c33] px-2 py-0.5 rounded-full border border-[#dfb141]/30">
-                              Contact {idx + 1}
+                            <span className="font-royal text-[10px] font-bold uppercase tracking-wider text-[#4ade80] bg-[#0c2217] px-2.5 py-0.5 rounded-full border border-[#25D366]/30">
+                              {contact.label}
                             </span>
                             <a
-                              href={`tel:${contact.tel}`}
-                              className="block font-mono text-sm font-bold text-[#f8edd1] tracking-wider mt-1.5 hover:text-[#ffd768] transition-colors"
+                              href={getWhatsAppMessage(contact.tel)}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="block font-mono text-sm font-bold text-[#f8edd1] tracking-wider mt-1.5 hover:text-[#4ade80] transition-colors"
                             >
                               {contact.display}
                             </a>
                           </div>
 
-                          <div className="flex items-center gap-2">
-                            <a
-                              href={`tel:${contact.tel}`}
-                              title={`Call ${contact.display}`}
-                              className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#dfb141]/40 bg-[#121c33] text-[#ffd768] transition-all hover:scale-110 hover:border-[#ffd768] hover:bg-[#dfb141] hover:text-[#070b14] active:scale-95 shadow-md"
-                            >
-                              <PhoneCall className="h-4 w-4" />
-                            </a>
-                            <a
-                              href={getWhatsAppMessage(contact.tel)}
-                              target="_blank"
-                              rel="noreferrer"
-                              title={`WhatsApp ${contact.display}`}
-                              className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#25D366]/40 bg-[#0c2217] text-[#25D366] transition-all hover:scale-110 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white active:scale-95 shadow-md"
-                            >
-                              <MessageCircle className="h-4 w-4" />
-                            </a>
-                          </div>
+                          <a
+                            href={getWhatsAppMessage(contact.tel)}
+                            target="_blank"
+                            rel="noreferrer"
+                            title={`WhatsApp ${contact.display}`}
+                            className="flex items-center gap-2 rounded-xl border border-[#25D366]/60 bg-[#0c2217] px-4 py-2.5 text-[#25D366] transition-all hover:scale-105 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white active:scale-95 shadow-md"
+                          >
+                            <MessageCircle className="h-4 w-4" />
+                            <span className="font-royal text-xs font-bold uppercase tracking-wider">WhatsApp</span>
+                          </a>
                         </div>
                       ))}
                     </div>
